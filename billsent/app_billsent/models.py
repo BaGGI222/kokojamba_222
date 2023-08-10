@@ -14,7 +14,7 @@ class Billsent(models.Model):
     price = models.DecimalField('Цена',max_digits=10, decimal_places=2)
     auction = models.BooleanField('Торг', help_text='Укажите, если возможен торг')
     create_at = models.DateTimeField(auto_now_add=True)
-    update_at = models.DateTimeField(auto_now=True)
+    update_at = models.DateTimeField(auto_now=True, color = 'red')
     user = models.ForeignKey(User, verbose_name='пользователь', on_delete=models.CASCADE)
     image = models.ImageField('изобржение', upload_to='billsent/')
 
