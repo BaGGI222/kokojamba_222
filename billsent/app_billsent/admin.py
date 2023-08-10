@@ -4,11 +4,11 @@ from .models import Billsent
 # Register your models here.
 
 class BillsentAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'description', 'price', 'auction', 'create_at']
+    list_display = ['id', 'title', 'description', 'price', 'auction', 'created_date', 'user']
     list_filter = ['price', 'auction', 'create_at']
     actions = ['make_auction_as_true', 'make_auction_as_false']
     fieldsets = (
-        ('Общие', {'fields': ('title', 'description')}),
+        ('Общие', {'fields': ('title', 'description', 'user')}),
         ('Финансы',{'fields': ('price', 'auction'), 'classes': ['collapse']})
     )
 
