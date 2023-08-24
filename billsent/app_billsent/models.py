@@ -26,6 +26,13 @@ class Billsent(models.Model):
                 '<span style="color: green; font-weight: bold;">Сегодня в {}</span>', created_time
             )
         return self.create_at.strftime('%d.%m.%Y')
+    
+    @admin.display(description = 'изображение')
+    def get_html_image(self):
+            if self.image:
+                return format_html(
+                    '<img src = "{url}" style = "max-width: 80px; maax height: 80px;">', url = self.image.url
+                )
 
 def __str__(self):
     return f'Billsent(id={self.id}, title = {self.title}, price = {self.price})'

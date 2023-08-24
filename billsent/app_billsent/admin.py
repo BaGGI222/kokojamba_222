@@ -4,7 +4,7 @@ from .models import Billsent
 # Register your models here.
 
 class BillsentAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'description', 'price', 'auction', 'created_date', 'user']
+    list_display = ['id', 'title', 'description', 'price', 'auction', 'created_date', 'user', 'get_html_image']
     list_filter = ['price', 'auction', 'create_at']
     actions = ['make_auction_as_true', 'make_auction_as_false']
     fieldsets = (
